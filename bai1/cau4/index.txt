@@ -1,0 +1,50 @@
+ Hãy tạo một tài liệu thiết kế API bằng Get để có thể xem được toàn bộ điểm số 
+ của 1 bạn học sinh.
+
+//request
+curl --location 'http://localhost:3000/students/scores/1'
+
+
+// response:
+
+const output = {
+  scores: [
+    {
+      id: 1,
+      student_id: 1,
+      name: "Nguyễn Văn Tèo",
+      score: 9,
+      coefficient: 1,
+      type: "Điểm kiểm tra miệng",
+      subject_name: "Ngữ văn",
+    },
+    {
+      id: 2,
+      student_id: 1,
+      name: "Nguyễn Văn Tèo",
+      score: 9,
+      coefficient: 2,
+      type: "Điểm kiểm 1 tiết",
+      subject_name: "Toán",
+    },
+    {
+      id: 3,
+      student_id: 1,
+      name: "Nguyễn Văn Tèo",
+      score: 9,
+      coefficient: 3,
+      type: "Điểm học kỳ",
+      subject_name: "Tiếng anh",
+    },
+    {
+      id: 7,
+      student_id: 1,
+      name: "Nguyễn Văn Tèo",
+      score: 10,
+      coefficient: 2,
+      type: "Điểm kiểm tra 1 tiết",
+      subject_name: "Ngữ văn",
+    },
+  ],
+  count: 4,
+};

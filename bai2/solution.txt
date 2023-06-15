@@ -1,0 +1,29 @@
+* Ý tưởng:
+ - Lượng nước đọng lại chỉ khi và chỉ khi giữa độ cao của 2 phần đất xanh thấp hơn 2 đầu của nó
+ - cứ mỗi đoạn A -> B đọng lại nước thì số lượng nước trong nó sẽ bằng:
+    + giá trị thấp nhấp của A và B trừ đi độ cao đang đứng của vị trí đang xét (nếu nó bé hơn):
+    + 
+        lượng nước trong khoảng AB: sAB = 0
+        min = Math.min(giá trị A, giá trị B)
+
+        for i = vị trí A -> vị trí B
+            sAB = min - giá trị của vị trí thứ i
+
+ - Lặp qua từng đoạn AB cho đến hết bản đồ sẽ tính được lượng nước đọng lại.
+
+ ===========
+* ví dụ với input 1: height = [0,1,0,2,1,0,1,3,2,1,2,1]
+tổng lượng nước là SUM = 0
+ta có thể thấy nó chia làm 3 đoạn AB là: 
+    - đoạn từ height[1] -> height[3]
+        min =  Math.min(giá trị A, giá trị B) = Math.min(1,2) = 1
+        duyệt qua đoạn => sAB = 1
+
+    - đoạn từ height[3] -> height[7] 
+        min =  Math.min(giá trị A, giá trị B) = Math.min(2,3) = 2
+        duyệt qua đoạn => sAB = 5
+
+    - đoạn từ height[7] -> height[10] 
+        min =  Math.min(giá trị A, giá trị B) = Math.min(3,2) = 2
+        duyệt qua đoạn => sAB = 1
+    => tổng lại ta được SUM = 1 + 5 + 1 = 6 == output

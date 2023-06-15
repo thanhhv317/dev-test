@@ -1,0 +1,22 @@
+Giáo viên phải chỉnh sửa điểm của học sinh. Hãy thiết kế để có thể chỉnh
+sửa được các nội dung tương ứng (Phải nhận data bằng post và chỉnh sửa).
+
+Vì API được dùng để update 1 record đã tồn tại trong hệ thống nên dùng POST
+không hợp lý, chuyển sang dùng PUT cho phù hợp với standart của Restful
+
+ request:
+
+ curl --location --request PUT 'localhost:3000/students/scores/1' \
+--header 'Content-Type: application/json' \
+--data '{
+    "transcript_id": 1,
+    "score": 10,
+    "type": 3,
+    "coefficient": 3
+}'
+
+
+// response:
+const output = {
+  message: "OK",
+};
